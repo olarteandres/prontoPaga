@@ -1,0 +1,20 @@
+{
+  "name": "pronto-paga",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "back",
+    "front/login",
+    "front/score",
+    "host"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n back,login,score,host -c blue,magenta,cyan,green \"npm:dev -w back\" \"npm:dev -w front/login\" \"npm:dev -w front/score\" \"npm:dev -w host\"",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.3"
+  }
+}
