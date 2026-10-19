@@ -1,0 +1,70 @@
+/* Tokens de diseno compartidos por host y microfronts. */
+:root {
+  --color-bg: #eef1ec;
+  --color-surface: #ffffff;
+  --color-ink: #1b2622;
+  --color-muted: #5e6b66;
+  --color-line: #cfd6d1;
+  --color-brand: #0e5a4a;
+  --color-brand-strong: #0a4639;
+  --color-brand-ink: #ffffff;
+  --color-focus: #2a8c76;
+
+  --color-risk-high: #b4372b;
+  --color-risk-mid: #c98a1b;
+  --color-risk-low: #2f7d4f;
+
+  --color-danger: #9f2f25;
+  --color-danger-bg: #fbedeb;
+  --color-warning-bg: #fdf5e4;
+
+  --font-ui: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-figure: 'Bricolage Grotesque', var(--font-ui);
+
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-figure: clamp(4.5rem, 14vw, 7.5rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  --radius-control: 6px;
+  --radius-panel: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
