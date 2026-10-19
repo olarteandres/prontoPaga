@@ -1,0 +1,23 @@
+.notice {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  z-index: 10;
+  max-width: min(26rem, calc(100% - 2 * var(--space-4)));
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border-left: 4px solid var(--color-risk-mid);
+  border-radius: var(--radius-control);
+  background: var(--color-warning-bg);
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+@media (max-width: 760px) {
+  .notice {
+    right: var(--space-4);
+    bottom: var(--space-4);
+    left: var(--space-4);
+    max-width: none;
+  }
+}

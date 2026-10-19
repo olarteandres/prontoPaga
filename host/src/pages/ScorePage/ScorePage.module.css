@@ -1,0 +1,60 @@
+.layout {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-brand);
+  color: var(--color-brand-ink);
+}
+
+.wordmark {
+  margin: 0;
+  font-weight: 700;
+  font-size: var(--text-lg);
+  letter-spacing: -0.01em;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.user {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.9;
+}
+
+.logout {
+  flex-shrink: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid rgb(255 255 255 / 0.5);
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+
+@media (max-width: 520px) {
+  .header {
+    padding: var(--space-3) var(--space-4);
+  }
+}
