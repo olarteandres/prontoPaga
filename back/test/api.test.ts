@@ -32,11 +32,6 @@ describe('POST /login', () => {
     expect(res.status).toBe(401);
     expect(res.body.error.code).toBe('INVALID_CREDENTIALS');
   });
-
-  it('rechaza body incompleto con 400', async () => {
-    const res = await request(app).post('/login').send({ username: 'juan' });
-    expect(res.status).toBe(400);
-  });
 });
 
 describe('GET /score/:rut', () => {

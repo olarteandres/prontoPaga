@@ -21,16 +21,11 @@ export const login = ({ username, password }: LoginRequest): string => {
 
 export const verifyToken = (token: string): JwtPayload => {
   try {
-    const decoded = jwt.verify(token, env.jwtSecret);
-    if (typeof decoded === 'string' || !decoded.sub || !('role' in decoded)) {
-      throw AppError.unauthorized('Token invalido');
-    }
-    return decoded as JwtPayload;
+    return jwt.verify(token, env.jwtSecret) as JwtPayload;
   } catch (err) {
     if (err instanceof jwt.TokenExpiredError) {
       throw new AppError(401, 'TOKEN_EXPIRED', 'La sesion expiro, vuelve a iniciar sesion');
     }
-    if (err instanceof AppError) throw err;
     throw AppError.unauthorized('Token invalido');
   }
 };

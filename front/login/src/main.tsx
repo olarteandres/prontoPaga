@@ -12,10 +12,7 @@ const Standalone = () => {
   return <LoginApp apiUrl={apiUrl} onLoginSuccess={setToken} />;
 };
 
-const root = document.getElementById('root');
-if (!root) throw new Error('No se encontro #root');
-
-createRoot(root).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Standalone />
   </StrictMode>,

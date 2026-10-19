@@ -27,10 +27,7 @@ const Standalone = () => {
   return <ScoreApp apiUrl={apiUrl} token={token} user={decode(token)} onUnauthorized={setMessage} />;
 };
 
-const root = document.getElementById('root');
-if (!root) throw new Error('No se encontro #root');
-
-createRoot(root).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Standalone />
   </StrictMode>,

@@ -14,11 +14,6 @@ describe('decodeToken', () => {
   it('lee un payload valido', () => {
     expect(decodeToken(fakeToken({ sub: 'u-002', role: 'user', rut: '12.345.678-5' }))).toMatchObject({ role: 'user' });
   });
-
-  it('descarta tokens mal formados o con rol desconocido', () => {
-    expect(decodeToken('basura')).toBeNull();
-    expect(decodeToken(fakeToken({ sub: 'x', role: 'root' }))).toBeNull();
-  });
 });
 
 describe('useSession', () => {

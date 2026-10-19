@@ -13,7 +13,7 @@ const readStoredSession = (): Session | null => {
   const token = sessionStorage.getItem(STORAGE_KEY);
   if (!token) return null;
   const user = decodeToken(token);
-  if (!user || isExpired(user)) {
+  if (isExpired(user)) {
     sessionStorage.removeItem(STORAGE_KEY);
     return null;
   }
@@ -33,7 +33,7 @@ export const useSession = () => {
 
   const login = useCallback((token: string): boolean => {
     const user = decodeToken(token);
-    if (!user || isExpired(user)) {
+    if (isExpired(user)) {
       setNotice('Recibimos una sesión inválida. Intenta iniciar sesión de nuevo.');
       return false;
     }

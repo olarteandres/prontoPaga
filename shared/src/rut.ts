@@ -17,7 +17,6 @@ export const computeDv = (body: string): string => {
 export const isValidRut = (rut: string): boolean => {
   if (!/^[0-9.\-\s]+[0-9kK]$/.test(rut.trim())) return false;
   const clean = cleanRut(rut);
-  if (clean.length < 2) return false;
   const body = clean.slice(0, -1);
   const dv = clean.slice(-1);
   if (!/^\d{1,8}$/.test(body)) return false;
